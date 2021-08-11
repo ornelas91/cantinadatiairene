@@ -1,0 +1,108 @@
+body {
+    background-image: url('../img/fundo.fw.png');
+}
+
+.title {
+    color: #f1ee0b;
+    font-size: 50px;
+    background-color: #EA0000;
+    border-radius: 10px 10px;
+    border-color: #FFF;
+}
+
+.textera {
+    background-color: #dadada;
+}
+
+.label {
+    color: white;
+    font: normal 20px Arial;
+}
+
+/**Menu**/
+
+.menu {
+    position: relative;
+}
+
+.menu ul {
+    padding:20px;
+    margin:0px;
+    background-color:;
+    list-style:none;
+    font-size: 20px;
+}
+
+.menu ul li { 
+    display: inline; 
+    padding: 10px;
+    position: static;
+}
+
+.menu ul li a {
+    padding: 20px 60px;
+    display: inline-block;
+    /* visual do link */
+    background-color:;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-bottom:3px solid #EDEDED;
+}
+
+.menu ul li a:hover {
+    background-color:;
+    color: #6D6D6D;
+    border-bottom:3px solid #EA0000;
+}
+
+nav #selecionado a {
+    color: #6D6D6D;
+    border-bottom:3px solid #EA0000;
+ }
+
+/**RodaPé**/
+.rodape {
+    float: center;
+    text-align: center;
+    float: inline-end;
+    margin-top: 480px;
+}
+
+.bgGradient {
+    background: linear-gradient(to right, #2e2f31, #171718);
+}
+
+.socialIcons a {
+    font-size: 1.5em;
+    color: #FFF;
+    margin-right: 2%;
+    opacity: 0.7;
+}
+
+.tsocial {
+    color: #dadada;
+    font-size: 25px;
+}
+
+.socialIcons a:last-child {
+    margin-right: 0;
+}
+
+.socialIcons a:hover {
+    opacity: 2;
+}
+
+.icondesenvolvedor {
+    font-size: 1em;
+    color: #FFF;
+}
+
+.direitos {
+    margin-top: 1%;
+    color: #FFF;
+    opacity: 0.7;
+}
+
+.caracteres, .caracter {
+    color: #f30000;
+}
