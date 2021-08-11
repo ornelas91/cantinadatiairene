@@ -1,5 +1,6 @@
 body {
     background-image: url('../img/fundo.fw.png');
+    text-align: center;
 }
 
 .title {
@@ -23,7 +24,9 @@ body {
 
 .menu {
     position: relative;
+    
 }
+
 
 .menu ul {
     padding:20px;
@@ -32,7 +35,6 @@ body {
     list-style:none;
     font-size: 20px;
 }
-
 .menu ul li { 
     display: inline; 
     padding: 10px;
@@ -42,22 +44,21 @@ body {
 .menu ul li a {
     padding: 20px 60px;
     display: inline-block;
-    /* visual do link */
     background-color:;
-    color: rgb(255, 255, 255);
+    color: rgb(253, 228, 1);
     text-decoration: none;
-    border-bottom:3px solid #EDEDED;
+    border-bottom:3px solid rgb(253, 228, 1);
 }
 
 .menu ul li a:hover {
     background-color:;
-    color: #6D6D6D;
-    border-bottom:3px solid #EA0000;
+    color: #f80202;
+    border-bottom:3px solid #f80202;
 }
 
 nav #selecionado a {
-    color: #6D6D6D;
-    border-bottom:3px solid #EA0000;
+    color: #f80202;
+    border-bottom:3px solid #f80202;
  }
 
 /**RodaPé**/
