@@ -62,12 +62,6 @@ nav #selecionado a {
  }
 
 /**RodaPé**/
-.rodape {
-    float: center;
-    text-align: center;
-    float: inline-end;
-    margin-top: 480px;
-}
 
 .bgGradient {
     background: linear-gradient(to right, #2e2f31, #171718);
