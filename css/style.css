@@ -11,6 +11,11 @@ body {
     border-color: #FFF;
 }
 
+.titleLogin {
+    font-size: 50px;
+    color: #f10b0b;
+}
+
 .textera {
     background-color: #dadada;
 }
@@ -60,6 +65,8 @@ nav #selecionado a {
     color: #f80202;
     border-bottom:3px solid #f80202;
  }
+
+
 
 /**RodaPé**/
 
