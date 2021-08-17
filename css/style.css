@@ -25,6 +25,15 @@ body {
     font: normal 20px Arial;
 }
 
+.textoE {
+    text-align: left;
+}
+
+.tSuporte {
+    font-size: 20px;
+    font-weight: bold; 
+}
+
 /**Menu**/
 
 .menu {
@@ -32,6 +41,9 @@ body {
     
 }
 
+.columns {
+    margin-top: 20px;
+}
 
 .menu ul {
     padding:20px;
@@ -65,8 +77,6 @@ nav #selecionado a {
     color: #f80202;
     border-bottom:3px solid #f80202;
  }
-
-
 
 /**RodaPé**/
 
@@ -103,8 +113,17 @@ nav #selecionado a {
     margin-top: 1%;
     color: #FFF;
     opacity: 0.7;
+    background-color: red;
+    width: auto;
+    height: 50px;
+    
+    
 }
 
 .caracteres, .caracter {
     color: #f30000;
+}
+
+.rodape {
+    height: 300px;
 }
