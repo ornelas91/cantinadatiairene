@@ -1,6 +1,7 @@
 body {
     background-image: url('../img/fundo.fw.png');
     text-align: center;
+    align-items: center;
 }
 
 .title {
@@ -9,6 +10,12 @@ body {
     background-color: #EA0000;
     border-radius: 10px 10px;
     border-color: #FFF;
+}
+
+.titulo {
+    color: #EA0000;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .titleLogin {

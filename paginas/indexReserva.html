@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleValores.css">
     <script src="https://kit.fontawesome.com/b1a188d194.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
 
@@ -27,49 +28,45 @@
             <div class="column is-grouped">
                 <!--Menu-->
                 <nav class="menu">
-                  <ul>                    
-                      <li><a  href="./indexHome.html">Home</a></li>
-                          <li><a href="./indexValores.html">Valores</a></li>
-                              <li><a href="./indexEstoque.html">Estoque</a></li>
-                                  <li><a href="./indexReserva.html">Reservas</a></li> 
-                                      <li  id="selecionado"><a href="./indexAjuda.html">Ajuda</a></li> 
-                                          <li><a href="paginas/index4.html">Compra</a></li> 
-                  </ul>
-              </nav>
-
-                <div class="row mx-md-n5">
-                  <div class="col py-3 px-md-5 border bg-light">
-                    <h1  class="titleLogin">Suporte</h1>
-                    <form class="was-validated">
-                      <div class="mb-3 textoE">
-                        <label>Nome: </label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="" required>                        
-                      </div>
-                      <div class="mb-3 textoE">
-                        <label>E-mail: </label>
-                        <input type="email" class="form-control" id="colFormLabel" placeholder="E-mail" required>                        
-                      </div>
-                      <div class="mb-3 textoE">
-                        <label for="validationTextarea">Mensagem: </label>
-                        <textarea class="form-control is-invalid" id="validationTextarea" rows="5" placeholder="Digite sua mensagem" required></textarea>                        
-                      </div>
-                      <button class="textoE button is-success">
-                        Enviar
-                      </button>
-                    </form>   
-                  </div>
-
-                  <div class="col py-3 px-md-5 border bg-light">
-                    <img src="../img/suporte.png" alt="">
-                    <h1 class="tSuporte">Telefone: 11 964646464</h1>
-                    <h1 class="tSuporte">Email: cantinatiairene@hotmail.com</h1>                  
-                  </div>
-                </div>  
-            </div>
-        </div>
-    </div>
+                    <ul>                    
+                        <li><a  href="./indexHome.html">Home</a></li>
+                            <li><a href="./indexValores.html">Valores</a></li>
+                                <li><a href="./indexEstoque.html">Estoque</a></li>
+                                    <li  id="selecionado"><a href="./indexReserva.html">Reservas</a></li> 
+                                        <li><a href="./indexAjuda.html">Ajuda</a></li> 
+                                            <li><a href="paginas/index4.html">Compra</a></li> 
+                    </ul>
+                </nav>
+	            <div class="container">
+			        <div class="column is-grouped">
+					    <div class="columns is-centered">
+						    <div class="column is-5-tablet is-4-desktop is-30-widescreen">							
+						    <form action="" class="box">							
+							    <div class="field">
+								    <h1 class="titleLogin">Cadastrar Reservas</h1>
+                                    <label>Cliente: </label>
+                                    <input type="text" class="form-control" id="#" placeholder="" value="" required>
+                                    <label>Produto: </label>
+                                    <input type="text" class="form-control" id="#" placeholder="" value="" required>
+                                    <label>Valor: </label>
+                                    <input  type="number" min="1" step="any" class="form-control" id="#" placeholder="" value="" required> 
+							    </div>				
+							    <div class="field">
+							        <button class="button is-success">
+								        Cadastrar
+							        </button>
+							    </div>
+							</div>
+						    </form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
-    
+
+
 
     <!--Rodapé-->
     <footer class="rodape bgGradient">
