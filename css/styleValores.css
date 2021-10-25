@@ -15,6 +15,11 @@
     font-size: 20px;
 }
 
+.nomeBold {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .botao {
     color: black;
     background-color: rgb(158, 156, 152);
@@ -33,4 +38,8 @@
 
 .pagination {
     margin-top: 5px;
+}
+
+.card {
+    width: 200px;
 }
