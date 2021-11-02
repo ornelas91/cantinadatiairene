@@ -17,10 +17,6 @@ else{
     session_start();
     $_SESSION['emailusuario'] = $resultado['email'];
     $_SESSION['senhausuario'] = $resultado['senha'];
-    
-    
- 
-
 
     if ($resultado){
     $_SESSION['nome'] = $resultado['nome'];
@@ -34,8 +30,4 @@ else{
     }
 }
     
-
-    
-    
-   
-    ?>
+?>
