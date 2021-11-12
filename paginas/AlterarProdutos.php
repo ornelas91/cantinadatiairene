@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+include_once ("../php/connect.php");
+
+//para buscar os dados para serem alterados 
+
+// Os dados são buscados de forma em que eles são mostrados nos campos para alterar os mesmos da melhor forma, sem problemas de confusão de dados
+
+$sql = "SELECT * FROM produto ";
+
+if( isset($_GET["codigo"])){
+$id = $_GET["codigo"];      //$id recebendo parametro passado pelo id ao clicar no botao alterar 
+    $sql .= " WHERE  id_produto = {$id}";
+}else{
+    header("location:../paginas/indexProdutos.php");
+}
+
+$resultado = mysqli_query($strcon, $sql) or die ("erro ao tentar se conectar com banco");
+
+$info_prod = mysqli_fetch_assoc($resultado);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,7 +41,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     
-   
+    
     <title>Cantina Da Tia Irene</title>
 </head>
 
@@ -30,8 +54,8 @@
                 <nav class="menu">
                     <ul>                    
                         <li><a  href="./indexHome.html">Home</a></li>
-                                <li><a href="./indexProdutos.html">Produtos</a></li>
-                                    <li  id="selecionado"><a href="./indexCadastro.html">Cadastrar</a></li> 
+                                <li><a href="./indexProdutos.php">Produtos</a></li>
+                                    <li  id="selecionado"><a href="./indexCadastro.php">Cadastrar</a></li> 
                                         <li><a href="./indexAjuda.html">Ajuda</a></li> 
                                             <li><a href="./indexCaixa.html">Caixa</a></li> 
                     </ul>
@@ -40,25 +64,20 @@
 			        <div class="column is-grouped">
 					    <div class="columns is-centered">
 						    <div class="column is-5-tablet is-4-desktop is-30-widescreen">							
-						    <form action="" class="box">							
+						    <form action="../php/AlterarProduto.php" class="box" method="POST">							
 							    <div class="field">
-								    <h1 class="titleLogin">Cadastrar Produto</h1>
+								    <h1 class="titleLogin">Alterar Produto</h1>
                                     <label>Nome: </label>
-                                    <input type="text" class="form-control" id="#" placeholder="" value="" required>
+                                    <input type="text" class="form-control" name="nome" id="#" value="<?php echo $info_prod["nome_produto"] ?>">
                                     <label>Quantidade: </label>
-                                    <input type="number" class="form-control" id="#" placeholder="" value="" required>
+                                    <input type="number" class="form-control" name="quantidade" id="#" value="<?php echo $info_prod["quantidade"] ?>">
                                     <label>Valor: </label>
-                                    <input  type="number" min="1" step="any" class="form-control" id="#" placeholder="" value="" required> 
+                                    <input  type="number" min="1" step="any" name="valor" class="form-control" id="#"  value="<?php echo $info_prod["valor_produto"] ?>"> 
+                                    <input type="hidden" name="idproduto" value="<?php echo $info_prod["id_produto"] ?>">
 							    </div>				
 							    <div class="field">
 							        <button class="button is-success">
-								        Cadastrar
-							        </button>
-                                    <button class="button is-success">
-								        Atualizar
-							        </button>
-                                    <button class="button is-success">
-								        Excluir
+								        Confirmar Atualização
 							        </button>
 							    </div>
 							</div>

@@ -12,6 +12,14 @@ body {
     border-color: #FFF;
 }
 
+.la {
+    color: #560858;
+    font-size: 60px;
+    font-weight: bold;
+    margin-left: 110%;
+    margin-top: 10px;
+}
+
 .titulo {
     color: #EA0000;
     font-size: 30px;
@@ -38,14 +46,14 @@ body {
 
 .tSuporte {
     font-size: 20px;
-    font-weight: bold; 
+    font-weight: bold;
 }
+
 
 /**Menu**/
 
 .menu {
     position: relative;
-    
 }
 
 .columns {
@@ -53,14 +61,15 @@ body {
 }
 
 .menu ul {
-    padding:20px;
-    margin:0px;
-    background-color:;
-    list-style:none;
+    padding: 20px;
+    margin: 0px;
+    background-color: none;
+    list-style: none;
     font-size: 20px;
 }
-.menu ul li { 
-    display: inline; 
+
+.menu ul li {
+    display: inline;
     padding: 10px;
     position: static;
 }
@@ -68,22 +77,23 @@ body {
 .menu ul li a {
     padding: 20px 60px;
     display: inline-block;
-    background-color:;
+    background-color: none;
     color: rgb(253, 228, 1);
     text-decoration: none;
-    border-bottom:3px solid rgb(253, 228, 1);
+    border-bottom: 3px solid rgb(253, 228, 1);
 }
 
 .menu ul li a:hover {
-    background-color:;
+    background-color: none;
     color: #f80202;
-    border-bottom:3px solid #f80202;
+    border-bottom: 3px solid #f80202;
 }
 
 nav #selecionado a {
     color: #f80202;
-    border-bottom:3px solid #f80202;
- }
+    border-bottom: 3px solid #f80202;
+}
+
 
 /**RodaPé**/
 
@@ -124,11 +134,10 @@ nav #selecionado a {
     width: auto;
     height: 50px;
     padding: 10px;
-    
-    
 }
 
-.caracteres, .caracter {
+.caracteres,
+.caracter {
     color: #f30000;
 }
 

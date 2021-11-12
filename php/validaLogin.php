@@ -2,7 +2,7 @@
 /*Código de validação de usuário */
 include_once 'connect.php'; /*Conexão ao banco*/
 if(empty($_POST['email']) || empty($_POST['senha'])){
-    echo "deu b.o";
+    echo "Preencha os Campos corretamente";
 }
 
 else{   
@@ -17,7 +17,9 @@ else{
     session_start();
     $_SESSION['emailusuario'] = $resultado['email'];
     $_SESSION['senhausuario'] = $resultado['senha'];
+    
 
+    
     if ($resultado){
     $_SESSION['nome'] = $resultado['nome'];
     $_SESSION['email'] = $resultado['email'];
@@ -30,4 +32,8 @@ else{
     }
 }
     
-?>
+
+    
+    
+   
+    ?>

@@ -63,10 +63,10 @@
 							  </button>
                                         <div class="field">
                                             <div>
-                                                Não tem cadastro? <a href="./php/produto.php">Cadastar</a>
+                                                Não tem cadastro? <a href="./paginas/indexCadastroUser.php">Cadastar</a>
                                             </div>
                                             <div>
-                                                <a href="./paginas/indexHome.html">Esqueceu a senha?</a>
+                                                <a href="">Esqueceu a senha?</a>
                                             </div>
                                         </div>
 										
