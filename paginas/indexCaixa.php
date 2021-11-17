@@ -61,14 +61,14 @@ $result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com b
     <div class="row mx-md-n5">
 
         <div class="col py-3 px-md-5 border bg-light">
-            <table width = "900" cellpadding = "0" cellspacing = "0" border = "1">
+            <table width = "750" cellpadding = "0" cellspacing = "0" border = "1">
                 <tr>
-                    <td class="col py-3 px-md-5 border bg-light">Produto</td>                    
-                    <td class="col py-3 px-md-5 border bg-light">Valor</td>
-                    <td class="col py-3 px-md-5 border bg-light">Quantidade</td>
-                    <td class="col py-3 px-md-5 border bg-light">Remover Produto</td>
+                    <td class="col py-3 px-md-5 border bg-light"><b> Produto </b></td>                    
+                    <td class="col py-3 px-md-5 border bg-light"><b> Valor </b></td>
+                    <td class="col py-3 px-md-5 border bg-light"><b> Quantidade </b></td>
+                    <td class="col py-3 px-md-5 border bg-light"><b> Remover Produto </b></td>
                 </tr>
-        <?php
+            <?php
                 
                 while($linha = mysqli_fetch_assoc($result)) {  
                     $valor = $linha["valor_venda"];
@@ -85,7 +85,7 @@ $result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com b
             ?>  
             </table>
         </div>
-
+        
 
         <div class="col py-3 px-md-5 border bg-light">
 
@@ -112,10 +112,10 @@ $result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com b
             <button class="textoE button is-success">
                 Finalizar Pedido
             </button>
-
         </div>
+       
     </div>
-
+        
 </section>
 
 <!--Rodapé-->
