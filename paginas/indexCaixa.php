@@ -1,24 +1,17 @@
 <?php
 
+
 session_start();
 include_once ("../php/connect.php");
 
-//para buscar os dados para serem alterados 
+//Buscando os dados da tabela de vendas
 
-// Os dados são buscados de forma em que eles são mostrados nos campos para alterar os mesmos da melhor forma, sem problemas de confusão de dados
+$stmt = "SELECT id_venda, produto_venda, valor_venda, quantidade FROM vendas ";
 
-$sql = "SELECT nome_produto, valor_produto, quantidade FROM produto ";
+$total = 0;
 
-if( isset($_GET["codigo"])){
-    $id = $_GET["codigo"];      //$id recebendo parametro passado pelo id ao clicar no botao alterar 
-    $sql .= " WHERE  id_produto = {$id}";
-}else{
-    
-}
+$result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com banco");
 
-$resultado = mysqli_query($strcon, $sql) or die ("erro ao tentar se conectar com banco");
-
-$linha = mysqli_fetch_assoc($resultado);
 
 ?>
 
@@ -68,26 +61,24 @@ $linha = mysqli_fetch_assoc($resultado);
     <div class="row mx-md-n5">
 
         <div class="col py-3 px-md-5 border bg-light">
-            <table class="col py-3 px-md-5 border bg-light">
+            <table width = "900" cellpadding = "0" cellspacing = "0" border = "1">
                 <tr>
-                    <td>Produto:</td>                    
-                    <td>Valor:</td>
-                    <td>Quantidade:</td>
+                    <td class="col py-3 px-md-5 border bg-light">Produto</td>                    
+                    <td class="col py-3 px-md-5 border bg-light">Valor</td>
+                    <td class="col py-3 px-md-5 border bg-light">Quantidade</td>
+                    <td class="col py-3 px-md-5 border bg-light">Remover Produto</td>
                 </tr>
         <?php
-                while($linha = mysqli_fetch_assoc($resultado)) {   
-                   /* $nome = $linha*/
+                
+                while($linha = mysqli_fetch_assoc($result)) {  
+                    $valor = $linha["valor_venda"];
+                    $total += $valor; 
             ?>
                 <tr>
-                    <td class="col py-3 px-md-5 border bg-light"><?php echo $linha["nome_produto"] ?></td>
-                    <td class="col py-3 px-md-5 border bg-light"> <?php echo $linha["valor_produto"] ?></td>
-                    <td class="col py-3 px-md-3 border bg-light"><?php echo $linha["quantidade"] ?></td>
-                    <td class="col py-3 px-md-3 border bg-light">
-                        <!--<form action="indexCaixa.php" method="POST">
-                            <input type="number" name="quantidade" value="1">
-                        </form>-->
-                        
-                    </td>
+                    <td class="col py-3 px-md-5 border bg-light"><?php echo $linha["produto_venda"] ?></td>
+                    <td class="col py-3 px-md-5 border bg-light"> <?php echo $linha["valor_venda"] ?></td>
+                    <td class="col py-3 px-md-3 border bg-light"><?php echo $linha["quantidade"] ?></td>  
+                    <td class="col py-3 px-md-5 border bg-light"><a onclick="return confirm('Deseja Remover?')" type="button" class="btn btn-danger"  href="../php/RemoverCarrinho.php?produto=<?php echo $linha["id_venda"] ?>">Remover</a></td>             
                 </tr>
              <?php
                 }
@@ -102,7 +93,7 @@ $linha = mysqli_fetch_assoc($resultado);
                 <h1 class="titleLogin">Total do Pedido</h1>
             </div>
             <div class="col py-3 px-md-5 border bg-light">
-                <h1 class="titleLogin">R$</h1>
+                <h1 class="titleLogin">R$<?php echo $total ?></h1>
             </div>
 
             <div class="col py-3 px-md-5 border bg-light">
@@ -120,17 +111,12 @@ $linha = mysqli_fetch_assoc($resultado);
             </div>
             <button class="textoE button is-success">
                 Finalizar Pedido
-              </button>
+            </button>
 
         </div>
     </div>
 
-
-
-
 </section>
-
-
 
 <!--Rodapé-->
 <footer class="rodape bgGradient">
@@ -141,13 +127,8 @@ $linha = mysqli_fetch_assoc($resultado);
         <a href="https://wa.me/55119" target="_blank"><i class="fab fa-whatsapp" title="Whatssapp"></i></a>
         <a href="mailto:cantinatiairene@hotmail.com?subject=Olá"><i class="fas fa-envelope" title="E-mail"></i></a>
     </div>
-
     <p class="direitos ">Copyright © Cantina da tia irene 2021. </p><br><br>
-
 </footer>
-
 <script src=".js"></script>
-
 </body>
-
 </html>

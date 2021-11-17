@@ -76,6 +76,7 @@ $total = mysql_num_rows($dados);
     <td class="col py-3 px-md-5 border bg-light"> <b> Quantidade </b> </td>
     <td class="col py-3 px-md-5 border bg-light"> <b> Alterar </b> </td>
     <td class="col py-3 px-md-5 border bg-light"> <b> Deletar </b> </td>
+    <td class="col py-3 px-md-5 border bg-light"> <b> Adiocionar ao caixa</b> </td>
     </tr>
 
     <?php
@@ -91,6 +92,7 @@ $total = mysql_num_rows($dados);
         <td class="col py-3 px-md-5 border bg-light">Un <?=$linha['quantidade']?></td>
         <td class="col py-3 px-md-5 border bg-light"><a type="button" class="btn btn-warning" href="AlterarProdutos.php?codigo=<?php echo $linha["id_produto"] ?>">Alterar</a></td>
         <td class="col py-3 px-md-5 border bg-light"><a onclick="return confirm('Deseja Excluir?')" type="button" class="btn btn-danger"  href="../php/ExcluirProduto.php?codigo=<?php echo $linha["id_produto"] ?>">Deletar</a></td>
+        <td class="col py-3 px-md-5 border bg-light"><a type="button" class="btn btn-warning"  href="../php/CarrinhoCompras.php?codigo=<?php echo $linha["id_produto"] ?>">Adicionar</a></td>
         </tr>
     <?php
             // finaliza o loop que vai mostrar os dados
@@ -105,8 +107,9 @@ $total = mysql_num_rows($dados);
 </center></table>  
 </div>                               
         </div>
-    </div>                         
-</section>
+    </div>
+    <button class="textoE button is-success" onclick="window.location.href='indexCaixa.php'">Ir para o Caixa</button>                         
+</section>         
 
     <!--Rodapé-->
 <footer class="rodape bgGradient">

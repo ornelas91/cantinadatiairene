@@ -17,21 +17,5 @@ else{
     header("Location: ../paginas/indexProdutos.php");
 }
 
-/*
-<?php
-    $produtos = "SELECT id_produto, nome_produto, quantidade FROM produto";
-    $linha_produtos = myqli_query($strcon, $produto);
-    if (!linha_produtos){
-        die("erro no banco");
-    }
-?>
-
-<?php while($linha = mysqli_fecth_assoc($linha_produtos)) {?>
-    <option value = "<?php echo $linha["id_produto"]; ?>">
-        <?php echo $linha["nome"]; ?>
-    </option>
-<?php }?>
-*/
-
 ?>
 
