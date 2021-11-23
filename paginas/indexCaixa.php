@@ -1,23 +1,21 @@
 <?php
 
-
 session_start();
 include_once ("../php/connect.php");
-
 //Buscando os dados da tabela de vendas
 
+$stmts = "SELECT SUM(valor_venda) AS total FROM vendas ";
+$result = mysqli_query($strcon, $stmts) or die ("erro ao tentar se conectar com banco");
+$linhas = mysqli_fetch_assoc($result);
+$total = $linhas["total"];
+
 $stmt = "SELECT id_venda, produto_venda, valor_venda, quantidade FROM vendas ";
-
-$total = 0;
-
 $result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com banco");
-
 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,11 +32,13 @@ $result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com b
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-
-
     <title>Cantina Da Tia Irene</title>
 </head>
-
+<ul style="margin-left:85%;  color: #560858; font-weight: bold;background-color: #2e2f31; width: 50px; height: 25px; ">
+    <li id="selecionado">
+        <a class="btn btn-danger" href="../php/logout.php">Sair</a>
+    </li>
+</ul>
 <section class="section">
     <div class="container">
         <h1 class="title has-text-centered">Cantina Da Tia Irene</h1>
@@ -61,61 +61,55 @@ $result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com b
     <div class="row mx-md-n5">
 
         <div class="col py-3 px-md-5 border bg-light">
-            <table width = "750" cellpadding = "0" cellspacing = "0" border = "1">
+            <table width = "900" cellpadding = "0" cellspacing = "0" border = "1">
                 <tr>
-                    <td class="col py-3 px-md-5 border bg-light"><b> Produto </b></td>                    
-                    <td class="col py-3 px-md-5 border bg-light"><b> Valor </b></td>
-                    <td class="col py-3 px-md-5 border bg-light"><b> Quantidade </b></td>
-                    <td class="col py-3 px-md-5 border bg-light"><b> Remover Produto </b></td>
+                    <td class="col py-3 px-md-5 border bg-light">Produto</td>                    
+                    <td class="col py-3 px-md-5 border bg-light">Valor</td>
+                    <td class="col py-3 px-md-5 border bg-light">Quantidade</td>
+                    <td class="col py-3 px-md-5 border bg-light">Remover Produto</td>
                 </tr>
-            <?php
-                
+            <?php   
                 while($linha = mysqli_fetch_assoc($result)) {  
-                    $valor = $linha["valor_venda"];
-                    $total += $valor; 
             ?>
                 <tr>
                     <td class="col py-3 px-md-5 border bg-light"><?php echo $linha["produto_venda"] ?></td>
-                    <td class="col py-3 px-md-5 border bg-light"> <?php echo $linha["valor_venda"] ?></td>
-                    <td class="col py-3 px-md-3 border bg-light"><?php echo $linha["quantidade"] ?></td>  
+                    <td class="col py-3 px-md-5 border bg-light">R$<?php echo $linha["valor_venda"] ?></td>
+                    <td class="col py-3 px-md-3 border bg-light">Un <?php echo $linha["quantidade"] ?></td>  
                     <td class="col py-3 px-md-5 border bg-light"><a onclick="return confirm('Deseja Remover?')" type="button" class="btn btn-danger"  href="../php/RemoverCarrinho.php?produto=<?php echo $linha["id_venda"] ?>">Remover</a></td>             
                 </tr>
-             <?php
+            <?php
                 }
             ?>  
             </table>
         </div>
-        
 
         <div class="col py-3 px-md-5 border bg-light">
-
             <div class="col py-3 px-md-5 border bg-light">
                 <h1 class="titleLogin">Total do Pedido</h1>
             </div>
             <div class="col py-3 px-md-5 border bg-light">
                 <h1 class="titleLogin">R$<?php echo $total ?></h1>
             </div>
-
-            <div class="col py-3 px-md-5 border bg-light">
+            <form name="" action="../php/FinalizaCompra.php" method="GET">
+                <div class="col py-3 px-md-5 border bg-light">
                 <label for="validationTextarea">Forma de Pagamento: </label>
                 <div class="input-group">
-                    <select class="custom-select" id="inputGroupSelect04" aria-label="Exemplo de select com botão addon"> 
-                  <option value="1">Dinheiro</option>
-                  <option value="2">Cartão de Crédito</option>
-                  <option value="3">Cartão de Débito</option>
-                  <option value="4">Pix</option>
-                  <option value="5">Vale Compra</option>
-                </select>
+                    <select class="custom-select" id="inputGroupSelect04" aria-label="Exemplo de select com botão addon" name="pegar"> 
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Cartão de Crédito">Cartão de Crédito</option>
+                        <option value="Cartão de Débito">Cartão de Débito</option>
+                        <option value="Pix">Pix</option>
+                        <option value="Vale Compra">Vale Compra</option>
+                    </select>
                 </div>
                 </br>
             </div>
-            <button class="textoE button is-success">
-                Finalizar Pedido
+            <button class="textoE button is-success" onclick="window.location.href='../php/FinalizaCompra.php'">
+                Confirmar Pedido
             </button>
+            </form>        
         </div>
-       
     </div>
-        
 </section>
 
 <!--Rodapé-->

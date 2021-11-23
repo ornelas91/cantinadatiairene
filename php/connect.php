@@ -15,7 +15,7 @@
     else {
         echo "Parabéns!! A conexão ao banco de dados ocorreu normalmente!.";
     }
-    */
+*/  
 ?>
 
 

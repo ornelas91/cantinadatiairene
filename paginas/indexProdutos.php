@@ -17,10 +17,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <?php
- $server="localhost";
- $user="root";
- $password="usbw";
- $bd="TiaIrene";
+    $server="localhost";
+    $user="root";
+    $password="usbw";
+    $bd="TiaIrene";
 
  
 $strcon = mysql_pconnect($server, $user, $password) or trigger_error(mysql_error(),E_USER_ERROR);
@@ -68,46 +68,46 @@ $total = mysql_num_rows($dados);
                 <h1 class="titleLogin">Lista de Produtos</h1></br>
 
 			<div >
-        <center><table  width = "900" cellpadding = "0" cellspacing = "0" border = "1">
+<center><table  width = "900" cellpadding = "0" cellspacing = "0" border = "1">
 
-            <tr>
-            <td class="col py-3 px-md-5 border bg-light"> <b> Nome  </b> </td>
-            <td class="col py-3 px-md-5 border bg-light"> <b> Valor  </b> </td>
-            <td class="col py-3 px-md-5 border bg-light"> <b> Quantidade </b> </td>
-            <td class="col py-3 px-md-5 border bg-light"> <b> Alterar </b> </td>
-            <td class="col py-3 px-md-5 border bg-light"> <b> Deletar </b> </td>
-            <td class="col py-3 px-md-5 border bg-light"> <b> Adiocionar ao caixa</b> </td>
-            </tr>
+    <tr>
+    <td class="col py-3 px-md-5 border bg-light"> <b> Nome  </b> </td>
+    <td class="col py-3 px-md-5 border bg-light"> <b> Valor  </b> </td>
+    <td class="col py-3 px-md-5 border bg-light"> <b> Quantidade </b> </td>
+    <td class="col py-3 px-md-5 border bg-light"> <b> Alterar </b> </td>
+    <td class="col py-3 px-md-5 border bg-light"> <b> Deletar </b> </td>
+    <td class="col py-3 px-md-5 border bg-light"> <b> Adiocionar ao caixa</b> </td>
+    </tr>
 
-            <?php
-                /*require_once('/www/main/cantinadatiairene/php/produto.php');*/
-                // se o número de resultados for maior que zero, mostra os dados
-                if($total > 0) {
-                // inicia o loop que vai mostrar todos os dados
-                    do {
-            ?>
-                <tr>
-                <td class="col py-3 px-md-5 border bg-light"><?=$linha['nome_produto']?></td> 
-                <td class="col py-3 px-md-5 border bg-light">R$<?=$linha['valor_produto']?></td> 
-                <td class="col py-3 px-md-5 border bg-light">Un <?=$linha['quantidade']?></td>
-                <td class="col py-3 px-md-5 border bg-light"><a type="button" class="btn btn-warning" href="AlterarProdutos.php?codigo=<?php echo $linha["id_produto"] ?>">Alterar</a></td>
-                <td class="col py-3 px-md-5 border bg-light"><a onclick="return confirm('Deseja Excluir?')" type="button" class="btn btn-danger"  href="../php/ExcluirProduto.php?codigo=<?php echo $linha["id_produto"] ?>">Deletar</a></td>
-                <td class="col py-3 px-md-5 border bg-light"><a type="button" class="btn btn-warning"  href="../php/CarrinhoCompras.php?codigo=<?php echo $linha["id_produto"] ?>">Adicionar</a></td>
-                </tr>
-            <?php
-                    // finaliza o loop que vai mostrar os dados
-                    }while($linha = mysql_fetch_assoc($dados));
-                // fim do if
-                }
-            ?>
-            <?php
-            // tira o resultado da busca da memória
-            mysql_free_result($dados);
-            ?>  
-        </center></table>  
-        </div>                               
+    <?php
+        /*require_once('/www/main/cantinadatiairene/php/produto.php');*/
+        // se o número de resultados for maior que zero, mostra os dados
+        if($total > 0) {
+        // inicia o loop que vai mostrar todos os dados
+            do {
+    ?>
+        <tr>
+        <td class="col py-3 px-md-5 border bg-light"><?=$linha['nome_produto']?></td> 
+        <td class="col py-3 px-md-5 border bg-light">R$<?=$linha['valor_produto']?></td> 
+        <td class="col py-3 px-md-5 border bg-light">Un <?=$linha['quantidade']?></td>
+        <td class="col py-3 px-md-5 border bg-light"><a type="button" class="btn btn-warning" href="AlterarProdutos.php?codigo=<?php echo $linha["id_produto"] ?>">Alterar</a></td>
+        <td class="col py-3 px-md-5 border bg-light"><a onclick="return confirm('Deseja Excluir?')" type="button" class="btn btn-danger"  href="../php/ExcluirProduto.php?codigo=<?php echo $linha["id_produto"] ?>">Deletar</a></td>
+        <td class="col py-3 px-md-5 border bg-light"><a type="button" class="btn btn-success"  href="../php/CarrinhoCompras.php?codigo=<?php echo $linha["id_produto"] ?>">Adicionar</a></td>
+        </tr>
+    <?php
+            // finaliza o loop que vai mostrar os dados
+            }while($linha = mysql_fetch_assoc($dados));
+        // fim do if
+        }
+    ?>
+    <?php
+    // tira o resultado da busca da memória
+    mysql_free_result($dados);
+    ?>  
+</center></table>  
+</div>                               
         </div>
-    </div>
+    </div><br/>
     <button class="textoE button is-success" onclick="window.location.href='indexCaixa.php'">Ir para o Caixa</button>                         
 </section>         
 

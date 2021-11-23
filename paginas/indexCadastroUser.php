@@ -20,6 +20,11 @@
    
     <title>Cantina Da Tia Irene</title>
 </head>
+<ul style="margin-left:85%;  color: #560858; font-weight: bold;background-color: #2e2f31; width: 50px; height: 25px; ">
+    <li id="selecionado">
+        <a class="btn btn-danger" href="../php/logout.php">Sair</a>
+    </li>
+</ul>
 
 <section class="section">
     <div class="container">

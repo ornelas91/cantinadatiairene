@@ -24,5 +24,4 @@ if( isset($_POST["nome"])){
         header("location:../paginas/indexProdutos.php");
     }
  }
-
 ?>

@@ -66,7 +66,7 @@
                                                 Não tem cadastro? <a href="./paginas/indexCadastroUser.php">Cadastar</a>
                                             </div>
                                             <div>
-                                                <a href="">Esqueceu a senha?</a>
+                                                <a href="#">Esqueceu a senha?</a>
                                             </div>
                                         </div>
 										
