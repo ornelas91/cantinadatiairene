@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include_once ("connect.php");
 
@@ -14,9 +13,7 @@ $tot = $linhas["total"];
 
 $stmt = "SELECT id_venda, produto_venda, valor_venda, quantidade FROM vendas ";
 $result = mysqli_query($strcon, $stmt) or die ("erro ao tentar se conectar com banco");
-
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

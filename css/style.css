@@ -49,9 +49,7 @@ body {
     font-weight: bold;
 }
 
-
 /**Menu**/
-
 .menu {
     position: relative;
 }
@@ -94,9 +92,7 @@ nav #selecionado a {
     border-bottom: 3px solid #f80202;
 }
 
-
 /**RodaPé**/
-
 .bgGradient {
     background: linear-gradient(to right, #2e2f31, #171718);
 }

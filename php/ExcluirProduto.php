@@ -1,7 +1,6 @@
 <?php
 
 header("location:../paginas/indexProdutos.php");
-
 // conexão com o banco de dados 
 session_start();
 include_once ("connect.php");

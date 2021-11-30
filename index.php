@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,9 +18,7 @@
     <?php
     session_start();
     ?>
-
 </head>
-
 <section class="section">
     <div class="container">
         <h1 class="title has-text-centered">Cantina Da Tia Irene</h1>
@@ -89,7 +86,6 @@
         </div>
     </div>
 </section>
-
 <!--Rodapé-->
 <footer class="rodape bgGradient">
     <div class="socialIcons">
@@ -99,13 +95,8 @@
         <a href="https://wa.me/55119" target="_blank"><i class="fab fa-whatsapp" title="Whatssapp"></i></a>
         <a href="mailto:anderson_ornelas91@hotmail.com?subject=Olá"><i class="fas fa-envelope" title="E-mail"></i></a>
     </div>
-
     <p class="direitos">Copyright © Cantina da tia irene 2021. </p><br><br>
-
 </footer>
-
 <script src=".js"></script>
-
 </body>
-
 </html>
