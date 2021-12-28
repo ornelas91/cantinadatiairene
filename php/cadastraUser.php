@@ -22,4 +22,7 @@ mysqli_set_charset($strcon,"utf8");
         header("Location: ../paginas/indexCadastroUser.php");
         $_SESSION['mensagem'] =  "Falha no Cadastro";
     }
+
+
+
 ?>
